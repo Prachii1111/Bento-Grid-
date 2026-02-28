@@ -1,0 +1,86 @@
+* {
+    margin: 0; 
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
+}
+
+.bento-grid {
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid blue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.heading {
+    background-color: hsl(256, 67%, 59%);
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.heading h1 {
+    max-width: 290px;
+    font-size: 2.9rem;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+.heading span {
+    color: hsl(39, 100%, 71%);
+}
+
+.ratings {
+    border: 1px solid yellow;
+    overflow: hidden;
+}
+
+.ratings img {
+    /* width: 100%; */
+    /* height: 100%; */
+    width: 210px;
+    height: auto;
+}
+
+.ratings p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.social-media {
+    background-color: hsl(31, 66%, 93%);
+}
+
+.social-media
+
+.schedule {
+    background-color: hsl(39, 100%, 71%);
+}
+
+.schedule-post {
+    background-color:hsl(254, 88%, 90%);
+}
+
+.followers-growth {
+    background-color: hsl(256, 67%, 59%);
+}
+
+.audience-growth {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.create-post {
+    background-color: hsl(31, 66%, 93%);
+}
+
+.ai-content {
+    background-color: hsl(39, 100%, 71%);
+}

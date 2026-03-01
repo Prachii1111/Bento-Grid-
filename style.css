@@ -1,35 +1,43 @@
 * {
     margin: 0; 
     padding: 0;
+    box-sizing: border-box;
     font-family: "DM Sans", sans-serif;
 }
 
 .bento-grid {
     border: 1px solid red;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #F5F5F5;
 }
 
 .card {
-    border: 1px solid blue;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 20px;
 }
 
-.heading {
-    background-color: hsl(256, 67%, 59%);
-    text-align: center;
-    color: hsl(0, 0%, 100%);
+/* .heading , .social-media, .schedule , .schedule-post,
+.followers-growth, .audience-growth, .create-post, .ai-content {
     display: flex;
     flex-direction: column;
+} */
+
+.heading {
+    background-color: hsl(256, 67%, 59%);
+    align-items: center;
+    color: hsl(0, 0%, 100%);
     gap: 15px;
 }
 
 .heading h1 {
     max-width: 290px;
-    font-size: 2.9rem;
+    font-size: 2.7rem;
+    text-align: center;
     font-weight: 550;
     letter-spacing: 1px;
 }
@@ -39,48 +47,214 @@
 }
 
 .ratings {
-    border: 1px solid yellow;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
 }
 
 .ratings img {
-    /* width: 100%; */
-    /* height: 100%; */
     width: 210px;
     height: auto;
 }
 
 .ratings p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 
 .social-media {
-    background-color: hsl(31, 66%, 93%);
+    border: 1px solid blue;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    /* display: flex; */
+    gap: 15px;
 }
 
-.social-media
+.social-media img {
+    width: 100%;
+    height: auto;
+}
+
+.social-media p {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
 
 .schedule {
     background-color: hsl(39, 100%, 71%);
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.schedule p {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.schedule img {
+    width: 300px;
+    height: auto;
 }
 
 .schedule-post {
     background-color:hsl(254, 88%, 90%);
+    gap: 20px;
+}
+
+.schedule-post p {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.schedule-post p:nth-child(3) {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 27px;
+}
+
+.schedule-post img {
+    width: 100%;
+    height: auto;
 }
 
 .followers-growth {
     background-color: hsl(256, 67%, 59%);
+    align-items: center;
+    gap: 30px;
+}
+
+.followers-growth img {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+}
+
+.followers-growth p {
+    max-width: 250px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    line-height: 30px;
 }
 
 .audience-growth {
     background-color: hsl(0, 0%, 100%);
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.audience-growth strong {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.audience-growth p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.audience-growth img {
+    width: 200px;
+    height: auto;
 }
 
 .create-post {
     background-color: hsl(31, 66%, 93%);
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.create-post p {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.create-post em {
+    color: hsl(256, 67%, 59%);
+}
+
+.create-post img {
+    width: 200px;
+    height: auto;
 }
 
 .ai-content {
     background-color: hsl(39, 100%, 71%);
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.ai-content p {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.ai-content img {
+    width: 250px;
+    height: auto;
+}
+
+@media(min-width: 48rem) {
+    .bento-grid {
+        max-width: 75rem;
+        margin: 0 auto;
+        /* padding: 32px; */
+
+        display: grid;
+        /* gap: 24px; */
+        /* align-items: start; */
+
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-rows: 1.45fr 1fr 0.92fr;    */
+        grid-template-areas:
+        'createPost heading heading schedulePost'
+        'createPost socialMedia schedule schedulePost'
+        'aiContent audienceGrowth followersGrowth followersGrowth';
+    }
+
+    .heading { 
+        grid-area: heading;
+        align-self: stretch;
+    }
+
+    .social-media { 
+        grid-area: socialMedia;
+        align-self: start;
+    }
+
+    .schedule { 
+        grid-area: schedule;
+        align-self: start;
+    }
+
+    .schedule-post { 
+        grid-area: schedulePost;
+        align-self: stretch;
+    }
+
+    .followers-growth { 
+        grid-area: followersGrowth;
+        align-self: stretch; 
+    }
+    .audience-growth {
+        grid-area: audienceGrowth; 
+        align-self: start;
+    }
+    .create-post { 
+        grid-area: createPost; 
+        align-self: stretch;
+    }
+    .ai-content { 
+        grid-area: aiContent; 
+        align-self: start;
+    }
+
+
 }

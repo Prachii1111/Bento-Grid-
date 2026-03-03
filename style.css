@@ -5,13 +5,22 @@
     font-family: "DM Sans", sans-serif;
 }
 
+:root {
+    --first-color:  #F5F5F5;
+    --second-color: hsl(0, 0%, 100%);
+    --third-color: hsl(31, 66%, 93%);
+    --fourth-color: hsl(256, 67%, 59%);
+    --fifth-color: hsl(39, 100%, 71%);
+    --six-color: hsl(254, 88%, 90%);
+}
+
+body { background-color: var(--first-color); }
+
 .bento-grid {
-    border: 1px solid red;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background-color: #F5F5F5;
 }
 
 .card {
@@ -21,18 +30,25 @@
     padding: 20px;
 }
 
-/* .heading , .social-media, .schedule , .schedule-post,
-.followers-growth, .audience-growth, .create-post, .ai-content {
-    display: flex;
-    flex-direction: column;
-} */
+img {
+    width: 100%;
+    height: auto;
+}
 
-.heading {
-    background-color: hsl(256, 67%, 59%);
-    align-items: center;
-    color: hsl(0, 0%, 100%);
+.heading , .social-media, .schedule, .audience-growth {
     gap: 15px;
 }
+
+.ai-content p, .create-post p, .audience-growth strong, .schedule-post p, .schedule p, .social-media p {
+    font-weight: 700;
+}
+
+.heading {
+    background-color: var(--fourth-color);
+    align-items: center;
+    color: var(--second-color);
+}
+
 
 .heading h1 {
     max-width: 290px;
@@ -43,73 +59,58 @@
 }
 
 .heading span {
-    color: hsl(39, 100%, 71%);
+    color: var(--fifth-color);
 }
 
 .ratings {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
+    overflow: hidden;
 }
 
-.ratings img {
-    width: 210px;
-    height: auto;
-}
-
-.ratings p {
-    font-size: 1.3rem;
-    font-weight: 400;
-}
+.ratings img { width: 210px; }
+.ratings p { font-size: 1.3rem; }
 
 .social-media {
-    border: 1px solid blue;
     background-color: #FFFFFF;
     overflow: hidden;
-    /* display: flex; */
-    gap: 15px;
-}
-
-.social-media img {
-    width: 100%;
-    height: auto;
 }
 
 .social-media p {
     font-size: 1.6rem;
-    font-weight: 700;
 }
 
 .schedule {
-    background-color: hsl(39, 100%, 71%);
+    background-color: var(--fifth-color);
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 15px;
+    padding: 20px;
     padding-bottom: 0;
     overflow: hidden;
+    position: relative;
 }
 
 .schedule p {
     font-size: 1.6rem;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
-.schedule img {
-    width: 300px;
-    height: auto;
+.schedule .image-container {
+    /* position: relative; */
+    width: 100%;
+    height: 140px;               
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
 }
 
 .schedule-post {
-    background-color:hsl(254, 88%, 90%);
+    background-color: var(--six-color);
     gap: 20px;
+    overflow: hidden;
 }
 
-.schedule-post p {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
+.schedule-post p { font-size: 1.8rem; }
 
 .schedule-post p:nth-child(3) {
     font-size: 1.4rem;
@@ -118,143 +119,184 @@
     line-height: 27px;
 }
 
-.schedule-post img {
-    width: 100%;
-    height: auto;
-}
-
 .followers-growth {
-    background-color: hsl(256, 67%, 59%);
+    background-color: var(--fourth-color);
     align-items: center;
     gap: 30px;
 }
 
-.followers-growth img {
-    width: 280px;
-    height: auto;
-    object-fit: contain;
-}
+.followers-growth img { width: 280px; }
 
 .followers-growth p {
     max-width: 250px;
     font-size: 1.5rem;
     font-weight: 500;
-    color: hsl(0, 0%, 100%);
+    color: var(--second-color);
     text-align: center;
     line-height: 30px;
 }
 
 .audience-growth {
-    background-color: hsl(0, 0%, 100%);
-    gap: 15px;
+    background-color: var(--second-color);
     align-items: flex-start;
 }
 
-.audience-growth strong {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
+.audience-growth strong {font-size: 2.5rem; }
 
 .audience-growth p {
     font-size: 1.3rem;
     font-weight: 600;
 }
 
-.audience-growth img {
-    width: 200px;
-    height: auto;
-}
+.audience-growth img {width: 200px;}
 
 .create-post {
-    background-color: hsl(31, 66%, 93%);
+    background-color: var(--third-color);
     gap: 20px;
     align-items: flex-start;
 }
 
-.create-post p {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
+.create-post p { font-size: 1.8rem; }
 
-.create-post em {
-    color: hsl(256, 67%, 59%);
-}
+.create-post em { color: var(--fourth-color); }
 
-.create-post img {
-    width: 200px;
-    height: auto;
-}
+.create-post img { width: 200px; }
 
 .ai-content {
-    background-color: hsl(39, 100%, 71%);
+    background-color: var(--fifth-color);
     align-items: flex-start;
-    gap: 20px;
+    gap: 35px;
 }
 
-.ai-content p {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.ai-content img {
-    width: 250px;
-    height: auto;
-}
+.ai-content p { font-size: 1.8rem; }
+.ai-content img { width: 250px; }
 
 @media(min-width: 48rem) {
     .bento-grid {
         max-width: 75rem;
         margin: 0 auto;
-        /* padding: 32px; */
-
         display: grid;
-        /* gap: 24px; */
-        /* align-items: start; */
-
+        gap: 24px;
+        
         grid-template-columns: repeat(4, 1fr);
-        /* grid-template-rows: 1.45fr 1fr 0.92fr;    */
+        grid-template-rows: repeat(6, 1fr);
         grid-template-areas:
         'createPost heading heading schedulePost'
+        'createPost heading heading schedulePost'
         'createPost socialMedia schedule schedulePost'
+        'aiContent socialMedia schedule schedulePost'
+        'aiContent audienceGrowth followersGrowth followersGrowth'
         'aiContent audienceGrowth followersGrowth followersGrowth';
     }
 
     .heading { 
         grid-area: heading;
-        align-self: stretch;
+        justify-content: center;
+    }
+
+    .heading h1 {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }  
+
+    .ratings p {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: hsl(0, 4%, 89%);
     }
 
     .social-media { 
-        grid-area: socialMedia;
-        align-self: start;
+        grid-area: socialMedia; 
+        justify-content: space-around;
+    }
+
+    .social-media img { width: 330px; }
+
+    .social-media p, .schedule p, .schedule-post p,
+    .schedule-post p:nth-child(3), .audience-growth p, 
+    .create-post p, .ai-content p {
+        font-weight: 600;
+    }
+
+    .social-media p {
+        font-size: 1.9rem;
+        line-height: 25px;
     }
 
     .schedule { 
         grid-area: schedule;
-        align-self: start;
+        justify-content: space-between;
     }
 
-    .schedule-post { 
-        grid-area: schedulePost;
-        align-self: stretch;
+    .schedule p {
+        font-size: 1.9rem;
+        line-height: 28px;
+    }
+
+    .schedule .image-container {
+        width: 230px;
+        max-height: 100px;
+    }
+
+    .schedule-post { grid-area: schedulePost; }
+    .schedule-post p { font-size: 1.8rem; }
+
+    .schedule-post p:nth-child(3) {
+        width: 200px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: left;
+        line-height: 20px;
+    }
+
+    .schedule-post .image-schedule {
+        width: 400px;
+        height: auto;
     }
 
     .followers-growth { 
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
         grid-area: followersGrowth;
-        align-self: stretch; 
     }
+
+    .followers-growth img  { width: 200px;}
+
+    .followers-growth p  {
+        font-size: 2.1rem;
+        text-align: left;
+    }
+
     .audience-growth {
         grid-area: audienceGrowth; 
-        align-self: start;
+        justify-content: center;
     }
+
+    .audience-growth strong { font-weight: 600; }
+    .audience-growth p { font-size: 1rem; }
+    .audience-growth img { width: 150px; }
+
     .create-post { 
+        justify-content: center;
         grid-area: createPost; 
-        align-self: stretch;
     }
+
+    .create-post p { font-size: 1.9rem; }
+    .create-post img { width: 170px; }
+
     .ai-content { 
         grid-area: aiContent; 
-        align-self: start;
+        justify-content: space-evenly;
     }
 
+    .ai-content p {
+        width: 150px;
+        font-size: 1.9rem;
+    }
 
+    .ai-content img {
+        align-self: center;
+        width: 180px;
+    }
 }
